@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import {API_BASE_URL} from "../config/api";
 
 const ApplicationForm = () => {
   const { projectId } = useParams();
@@ -19,7 +20,7 @@ const ApplicationForm = () => {
   });
 
   useEffect(() => {
-    fetch(`http://localhost:8081/api/projects/${projectId}`)
+    fetch(`${API_BASE_URL}/api/projects/${projectId}`)
       .then(res => res.json())
       .then(data => {
         setClientEmail(data.clientEmail);
@@ -35,7 +36,7 @@ const ApplicationForm = () => {
     e.preventDefault();
     const payload = { ...formData, clientEmail, projectId };
 
-    const response = await fetch('http://localhost:8081/api/apply', {
+    const response = await fetch(`${API_BASE_URL}/api/apply`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),

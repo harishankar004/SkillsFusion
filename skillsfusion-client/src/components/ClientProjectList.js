@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import {API_BASE_URL} from "../config/api";
 const ClientProjectList = () => {
   const [projects, setProjects] = useState([]);
   const clientEmail = localStorage.getItem("userEmail");
@@ -9,7 +9,7 @@ const ClientProjectList = () => {
   useEffect(() => {
     if (!clientEmail) return;
 
-    fetch(`http://localhost:8081/api/projects/client/${clientEmail}`)
+    fetch(`${API_BASE_URL}/api/projects/client/${clientEmail}`)
       .then(res => res.json())
       .then(data => setProjects(data))
       .catch(err => console.error("Error fetching client projects:", err));

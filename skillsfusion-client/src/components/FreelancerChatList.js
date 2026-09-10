@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {API_BASE_URL} from "../config/api";
 
 const styles = {
   container: {
@@ -72,7 +73,7 @@ const FreelancerChatList = () => {
   useEffect(() => {
     if (!freelancerEmail) return;
 
-    fetch(`http://localhost:8081/api/applications/freelancer/${freelancerEmail}`)
+    fetch(`${API_BASE_URL}/api/applications/freelancer/${freelancerEmail}`)
       .then((res) => {
         if (!res.ok) throw new Error('Failed to fetch clients');
         return res.json();

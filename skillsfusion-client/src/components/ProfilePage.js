@@ -3,6 +3,7 @@ import './ProfilePage.css';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import { useNavigate } from 'react-router-dom';
+import {API_BASE_URL} from "../config/api";
 
 const ProfilePage = () => {
   const email = localStorage.getItem("userEmail");
@@ -21,7 +22,7 @@ const ProfilePage = () => {
       return;
     }
 
-    fetch(`http://localhost:8081/api/auth/${email}`)
+    fetch(`${API_BASE_URL}/api/auth/${email}`)
       .then(res => {
         if (!res.ok) throw new Error("Failed to fetch user");
         return res.json();
@@ -45,7 +46,7 @@ const ProfilePage = () => {
 
   const handleUpdate = async () => {
     try {
-      const res = await fetch(`http://localhost:8081/api/auth/${email}`, {
+      const res = await fetch(`${API_BASE_URL}/api/auth/${email}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...user, ...form }),

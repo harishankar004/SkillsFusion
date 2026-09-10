@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import './Hero.css';
+import {API_BASE_URL} from "../config/api";
 
 const defaultCategories = [
   'Development & IT',
@@ -33,7 +34,7 @@ const Hero = () => {
 
   /* 🔄 Fetch categories */
   useEffect(() => {
-    fetch('http://localhost:8081/api/projects/categories')
+    fetch(`${API_BASE_URL}/api/projects/categories`)
       .then((res) => res.json())
       .then((data) =>
         setAllCategories(

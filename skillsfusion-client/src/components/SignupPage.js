@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
 import './FreelanceAuthPages.css';
 import { useNavigate } from 'react-router-dom';
+import {API_BASE_URL} from "../config/api";
 
 const SignupPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -58,7 +59,7 @@ const SignupPage = () => {
 
   const handleSubmit = async () => {
     if (!validateForm()) return;
-    const url = 'http://localhost:8081/api/auth/signup';
+    const url = `${API_BASE_URL}/api/auth/signup`;
     const payload = {
       email: formData.email,
       password: formData.password,

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {API_BASE_URL} from "../config/api";
 
 const ClientProjectForm = () => {
   const navigate = useNavigate();
@@ -30,7 +31,7 @@ const ClientProjectForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch('http://localhost:8081/api/projects/upload', {
+    const res = await fetch(`${API_BASE_URL}/api/projects/upload`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData)

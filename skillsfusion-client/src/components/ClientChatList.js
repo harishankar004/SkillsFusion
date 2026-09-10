@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import {API_BASE_URL} from "../config/api";
 const ClientChatList = () => {
   const [freelancers, setFreelancers] = useState([]);
   const clientEmail = localStorage.getItem('userEmail');
@@ -9,7 +9,7 @@ const ClientChatList = () => {
   useEffect(() => {
     if (!clientEmail) return;
 
-    fetch(`http://localhost:8081/api/applications/client/${clientEmail}`)
+    fetch(`${API_BASE_URL}/api/applications/client/${clientEmail}`)
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch freelancers");
         return res.json();

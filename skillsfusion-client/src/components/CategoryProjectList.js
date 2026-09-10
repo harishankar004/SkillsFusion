@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './CategoryProjectList.css';
-
+import {API_BASE_URL} from "../config/api";
 const CategoryProjectList = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ const CategoryProjectList = () => {
     if (!category) return;
 
     fetch(
-      `http://localhost:8081/api/projects/category/${encodeURIComponent(
+      `${API_BASE_URL}/api/projects/category/${encodeURIComponent(
         category
       )}`
     )

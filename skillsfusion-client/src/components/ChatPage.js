@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import SockJS from 'sockjs-client';
 import { Client } from '@stomp/stompjs';
 import './ChatPage.css';
+import {API_BASE_URL} from "../config/api";
 
 const ChatPage = () => {
   const [messages, setMessages] = useState([]);
@@ -23,7 +24,7 @@ const ChatPage = () => {
   const fetchMessages = async () => {
     try {
       const res = await fetch(
-        `http://localhost:8081/api/chat/messages?user1=${senderEmail}&user2=${receiverEmail}`
+        `${API_BASE_URL}/api/chat/messages?user1=${senderEmail}&user2=${receiverEmail}`
       );
       const data = await res.json();
       setMessages(data);
@@ -36,7 +37,7 @@ const ChatPage = () => {
   useEffect(() => {
     if (nameFromParams || !receiverEmail) return;
 
-    fetch(`http://localhost:8081/api/auth/${receiverEmail}`)
+    fetch(`${API_BASE_URL}/api/auth/${receiverEmail}`)
       .then((res) => (res.ok ? res.json() : null))
       .then((data) => {
         if (data?.name) setReceiverName(data.name);
@@ -53,7 +54,7 @@ const ChatPage = () => {
     fetchMessages();
 
     const client = new Client({
-      webSocketFactory: () => new SockJS(`http://localhost:8081/ws?email=${senderEmail}`),
+      webSocketFactory: () => new SockJS(`${API_BASE_URL}/ws?email=${senderEmail}`),
       reconnectDelay: 5000,
       onConnect: () => {
         client.subscribe('/user/queue/messages', (frame) => {

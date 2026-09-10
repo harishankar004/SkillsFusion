@@ -4,6 +4,7 @@ import './FreelanceAuthPages.css';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import { useNavigate } from 'react-router-dom';
+import {API_BASE_URL} from "../config/api";
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -29,7 +30,7 @@ const LoginPage = () => {
 
     setIsLoading(true);
     try {
-      const res = await fetch('http://localhost:8081/api/auth/login', {
+      const res = await fetch(`${API_BASE_URL}/api/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
