@@ -14,7 +14,6 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                // allowedOriginPatterns allows dynamic matching for Vercel preview links and production
                 .allowedOriginPatterns(
                         "http://localhost:3000",
                         "https://*.vercel.app",
