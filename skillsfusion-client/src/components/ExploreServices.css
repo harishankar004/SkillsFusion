@@ -1,0 +1,114 @@
+.explore-section {
+  padding: 60px 20px;
+  background-color: #f9fafb;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.explore-header h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.explore-header p {
+  font-size: 16px;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+}
+
+/* Container with scroll and center alignment */
+.services-grid-wrapper {
+  overflow-x: auto;
+  padding: 10px 40px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.services-grid-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.services-grid {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  min-width: max-content;
+}
+
+/* Box styles */
+.service-card {
+  flex: 0 0 auto;
+  width: 220px;
+  background-color: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 14px;
+  padding: 18px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  text-align: center;
+
+  /* ✨ Soft shadow */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: #1da1f2;
+  box-shadow: 0 12px 24px rgba(29, 161, 242, 0.15); /* Stronger blue-tinted shadow */
+}
+
+.icon-wrapper {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(90deg, #1da1f2, #00c6ff);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px auto;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 198, 255, 0.3); /* Subtle glow */
+}
+
+.service-card:hover .icon-wrapper {
+  background: linear-gradient(90deg, #1da1f2, #00c6ff);
+}
+
+.service-card h3 {
+  font-size: 17px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 6px;
+}
+
+.service-card p {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.explore-footer {
+  margin-top: 40px;
+}
+
+.browse-button {
+  background: linear-gradient(90deg, #1da1f2, #00c6ff);
+  color: white;
+  padding: 12px 28px;
+  font-size: 16px;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 198, 255, 0.3);
+}
+
+.browse-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 198, 255, 0.4);
+}

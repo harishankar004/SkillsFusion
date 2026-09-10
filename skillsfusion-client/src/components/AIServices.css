@@ -1,0 +1,215 @@
+/* AIServices.css */
+
+/* Overall Page Layout */
+.ai-page {
+  min-height: 100vh;
+  background: #f9fafb;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header Section */
+.ai-header {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  padding-top: 3rem;
+}
+
+/* Top-Left Back Button */
+.ai-back-button {
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #555;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.ai-back-button:hover {
+  color: #000;
+}
+
+/* Main Icon in Header */
+.ai-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #1da1f2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* Header Content */
+.ai-header-content h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.ai-header-content p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Services Grid */
+.ai-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Service Cards */
+.ai-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.ai-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Card Icon */
+.ai-icon-small {
+  width: 44px;
+  height: 44px;
+  background: #1da1f2;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+/* Card Title */
+.ai-card h3 {
+  font-size: 1.25rem;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* Card Description */
+.ai-card p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+/* AI Tools / Skills Tags */
+.ai-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.ai-tech-tag {
+  background-color: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  border: 1px solid #bae6fd;
+  transition: background 0.2s ease;
+}
+
+.ai-tech-tag:hover {
+  background-color: #bae6fd;
+}
+
+/* CTA Section */
+.ai-cta {
+  text-align: center;
+  background: #1da1f2;
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(29, 161, 242, 0.3);
+  margin-top: 4rem;
+}
+
+.ai-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.ai-cta p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ai-cta-btn {
+  background: white;
+  color: #1da1f2;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ai-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .ai-header-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .ai-header-content p {
+    font-size: 1rem;
+  }
+
+  .ai-card {
+    padding: 1.2rem;
+  }
+
+  .ai-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .ai-back-button {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}

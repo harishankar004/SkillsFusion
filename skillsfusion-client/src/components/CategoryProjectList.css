@@ -1,0 +1,160 @@
+/* Import modern font */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;800&display=swap');
+
+/* Global container */
+.category-page {
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Rubik', sans-serif;
+  position: relative;
+}
+
+/* Heading */
+.category-page h2 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 40px;
+}
+
+/* 🏠 Home button */
+.catproj-home-btn {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  background: linear-gradient(135deg, #007bff, #00bfff);
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.catproj-home-btn:hover {
+  background: linear-gradient(135deg, #0056b3, #0080ff);
+  transform: translateY(-2px);
+}
+
+/* 📦 Project Grid */
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 🧾 Each Card */
+.project-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.5s ease both;
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.project-card p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #444;
+}
+
+/* 🧭 Button container for Apply and Chat */
+.project-buttons {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* ✅ Apply Button (light green) */
+.apply-btn {
+  background: #90ee90;
+  color: #000;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease;
+  min-width: 100px;
+}
+.apply-btn:hover {
+  background: #70d870;
+}
+
+/* 💬 Chat Button (blue) */
+.chat-btn {
+  background: #17a2b8;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease;
+  min-width: 100px;
+}
+.chat-btn:hover {
+  background: #138496;
+}
+
+/* ✨ Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Fix */
+@media (max-width: 500px) {
+  .category-page h2 {
+    font-size: 24px;
+  }
+
+  .catproj-home-btn {
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+
+  .apply-btn,
+  .chat-btn {
+    font-size: 12px;
+    padding: 8px 16px;
+    min-width: 90px;
+  }
+
+  .project-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}

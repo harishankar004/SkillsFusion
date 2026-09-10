@@ -1,0 +1,17 @@
+# --- Frontend (Client) ---
+skillsfusion-client/node_modules/
+# skillsfusion-client/build/
+# skillsfusion-client/dist/
+# skillsfusion-client/.env*.local
+
+# --- Backend (Spring Boot) ---
+# skillsfusion-backend/target/
+# skillsfusion-backend/.mvn/
+# skillsfusion-backend/*.jar
+# skillsfusion-backend/.classpath
+# skillsfusion-backend/.project
+
+# --- IDE & System Files ---
+# .idea/
+# .vscode/
+# *.DS_Store

@@ -1,0 +1,223 @@
+/* Base Reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #d6eaff, #ffffff);
+  margin: 0;
+  padding: 0;
+}
+
+/* Container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/* Grid Layout */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+/* Branding (Left) */
+.branding {
+  flex: 1;
+  background: linear-gradient(135deg, #1da0f2d2, #00c6ff);
+  color: white;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.branding h1 {
+  font-size: 36px;
+  margin-bottom: 12px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.branding p {
+  font-size: 18px;
+  text-align: center;
+  opacity: 0.95;
+}
+
+/* Card (Right) */
+.card {
+  flex: 2;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 28px;
+  color: #0d47a1;
+}
+
+.card p {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Input Field Styling */
+.input-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-field label {
+  font-size: 14px;
+  margin-top: 12px;
+  color: #222;
+}
+
+.input-field input[type="text"],
+.input-field input[type="email"],
+.input-field input[type="password"] {
+  padding: 10px 12px;
+  font-size: 14px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  transition: border 0.2s ease;
+}
+
+.input-field input:focus {
+  border-color: #00c6ff;
+  outline: none;
+}
+
+.input-field input.error {
+  border-color: red;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Password Field */
+.password-field {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.password-field input {
+  flex: 1;
+}
+
+.password-field button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #555;
+}
+
+/* Radio Buttons */
+.checkbox-group {
+  margin-top: 8px;
+  display: flex;
+  gap: 20px;
+}
+
+.checkbox-group label {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Button */
+.button {
+  background: #00c6ff;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+  background: #0095c5;
+}
+
+/* Switch Login/Signup Text */
+.toggle-mode {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.toggle-mode p {
+  font-size: 14px;
+  color: #444;
+}
+
+.toggle-mode button {
+  background: none;
+  border: none;
+  color: #00c6ff;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 5px;
+  padding: 0;
+}
+
+/* Password Strength Message */
+.password-strength {
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 6px;
+}
+
+.password-strength.weak {
+  color: red;
+}
+
+.password-strength.medium {
+  color: orange;
+}
+
+.password-strength.strong {
+  color: green;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .grid {
+    flex-direction: column;
+  }
+
+  .branding {
+    padding: 30px 20px;
+  }
+
+  .card {
+    padding: 30px 20px;
+  }
+}
