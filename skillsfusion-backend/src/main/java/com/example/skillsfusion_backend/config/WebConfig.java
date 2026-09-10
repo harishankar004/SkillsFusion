@@ -8,16 +8,21 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
-    // Reads FRONTEND_URL environment variable, defaults to localhost:3000 if not present
-    @Value("${FRONTEND_URL:https://skillsfusion.vercel.app/}")
+    @Value("${FRONTEND_URL:http://localhost:3000}")
     private String frontendUrl;
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins(frontendUrl, "http://localhost:3000","https://skillsfusion.vercel.app/","https://*.vercel.app")
+                // allowedOriginPatterns allows dynamic matching for Vercel preview links and production
+                .allowedOriginPatterns(
+                        "http://localhost:3000",
+                        "https://*.vercel.app",
+                        frontendUrl
+                )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
+                .exposedHeaders("Authorization")
                 .allowCredentials(true);
     }
 }
