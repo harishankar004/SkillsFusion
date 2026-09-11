@@ -30,16 +30,9 @@ public class SecurityConfig {
 
                 // 3. Configure endpoint permissions
                 .authorizeHttpRequests(auth -> auth
-                        // Allow browser OPTIONS preflight requests to pass without authentication
-                        .requestMatchers(CorsUtils::isPreFlightRequest).permitAll()
-
-                        // Allow public access to auth endpoints and public categories
-                        .requestMatchers("/api/auth/**", "/api/projects/categories").permitAll()
-
-                        // Secure all remaining endpoints
-                        .anyRequest().authenticated()
-                );
-
+                .requestMatchers(CorsUtils::isPreFlightRequest).permitAll()
+                .anyRequest().permitAll()
+);
         return http.build();
     }
 }
