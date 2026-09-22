@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 // Global Components
@@ -50,6 +51,9 @@ function ProfileRoute() {
 }
 
 function App() {
+  useEffect(() => {
+    document.title = "Skillsfusion";
+  }, []);
   return (
     <Router>
       <Routes>
